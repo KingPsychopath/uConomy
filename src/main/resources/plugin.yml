@@ -1,0 +1,11 @@
+name: Economy
+main: com.brysonm.uconomy.uConomy
+version: 1.0
+
+commands:
+  sell:
+  balance:
+  deposit:
+  withdraw:
+  buy:
+  price:
