@@ -17,15 +17,19 @@ public class Sale {
 
     public Sale(Player player, Material material, double price) {
 
-        this.uuid = UUID.randomUUID();
-
         this.player = player;
 
         this.material = material;
 
         this.price = price;
 
-        this.save();
+        if(!uConomy.getInstance().mysql) {
+
+            this.uuid = UUID.randomUUID();
+
+            this.save();
+
+        }
 
     }
 

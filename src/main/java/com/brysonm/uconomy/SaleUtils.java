@@ -26,23 +26,41 @@ public class SaleUtils {
 
     public static void loadSales() {
 
-        FileConfiguration config = uConomy.getSalesYML().getConfig();
+        if(uConomy.getInstance().mysql) {
 
-        if(!config.contains("sales")) return;
+            FileConfiguration config = uConomy.getInstance().getConfig();
 
-        for(String key : config.getConfigurationSection("sales").getKeys(false)) {
+            uConomy.getInstance().database = new Database(config.getString("mysql.host"), config.getString("mysql.database"), config.getString("mysql.user"), config.getString("mysql.password"), config.getString("mysql.table"));
 
-            UUID uuid = UUID.fromString(key);
+            List<Sale> list = uConomy.getInstance().database.loadSales();
 
-            Player player = Bukkit.getPlayer(config.getString("sales." + key + ".player"));
+            for(Sale sale : list) {
 
-            Material material = Material.getMaterial(config.getString("sales." + key + ".material"));
+                sales.add(sale);
 
-            double price = config.getDouble("sales." + key + ".price");
+            }
 
-            Sale sale = new Sale(uuid, player, material, price);
+        } else {
 
-            sales.add(sale);
+            FileConfiguration config = uConomy.getSalesYML().getConfig();
+
+            if(!config.contains("sales")) return;
+
+            for(String key : config.getConfigurationSection("sales").getKeys(false)) {
+
+                UUID uuid = UUID.fromString(key);
+
+                Player player = Bukkit.getPlayer(config.getString("sales." + key + ".player"));
+
+                Material material = Material.getMaterial(config.getString("sales." + key + ".material"));
+
+                double price = config.getDouble("sales." + key + ".price");
+
+                Sale sale = new Sale(uuid, player, material, price);
+
+                sales.add(sale);
+
+            }
 
         }
 
