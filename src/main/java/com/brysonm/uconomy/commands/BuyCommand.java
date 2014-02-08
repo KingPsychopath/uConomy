@@ -1,6 +1,7 @@
 package com.brysonm.uconomy.commands;
 
 import com.brysonm.uconomy.BalanceUtils;
+import com.brysonm.uconomy.ItemUtils;
 import com.brysonm.uconomy.Sale;
 import com.brysonm.uconomy.SaleUtils;
 import org.bukkit.ChatColor;
@@ -67,7 +68,7 @@ public class BuyCommand implements CommandExecutor {
 
                     if(sales.isEmpty()) {
 
-                        player.sendMessage(ChatColor.RED + "The uconomy has no " + material.name() + " left.");
+                        player.sendMessage(ChatColor.RED + "The economy has no " + ItemUtils.toFriendlyName(material) + " left.");
 
                         return true;
 
@@ -99,7 +100,7 @@ public class BuyCommand implements CommandExecutor {
 
                     if(sales.size() < amount) {
 
-                        player.sendMessage(ChatColor.RED + "Only " + sales.size() + " " + material.name() + " remains in the uconomy.");
+                        player.sendMessage(ChatColor.RED + "Only " + sales.size() + " " + ItemUtils.toFriendlyName(material) + " remains in the economy.");
 
                         return true;
 
@@ -107,7 +108,7 @@ public class BuyCommand implements CommandExecutor {
 
                     SaleUtils.buyItems(player, sales);
 
-                    player.sendMessage(ChatColor.GRAY + "You have bought " + amount + " " + material.name() + " for " + price + " gold. Your new balance is " + BalanceUtils.getBalance(player) + ".");
+                    player.sendMessage(ChatColor.GRAY + "You have bought " + amount + " " + ItemUtils.toFriendlyName(material) + " for " + price + " gold. Your new balance is " + BalanceUtils.getBalance(player) + ".");
 
                     return true;
 

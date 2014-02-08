@@ -1,5 +1,6 @@
 package com.brysonm.uconomy.commands;
 
+import com.brysonm.uconomy.ItemUtils;
 import com.brysonm.uconomy.SaleUtils;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
@@ -56,7 +57,7 @@ public class SellCommand implements CommandExecutor {
 
                     if(amount > count) {
 
-                        player.sendMessage(ChatColor.RED + "You only have " + count + " " + material.name() + ".");
+                        player.sendMessage(ChatColor.RED + "You only have " + count + " " + ItemUtils.toFriendlyName(material) + ".");
 
                         return true;
 
@@ -72,7 +73,7 @@ public class SellCommand implements CommandExecutor {
 
                     player.getInventory().removeItem(new ItemStack(material, amount));
 
-                    player.sendMessage(ChatColor.GRAY + "You have put " + amount + " " + material.name() + " on the market for " + price + " gold.");
+                    player.sendMessage(ChatColor.GRAY + "You have put " + amount + " " + ItemUtils.toFriendlyName(material) + " on the market for " + price + " gold.");
 
                     return true;
 

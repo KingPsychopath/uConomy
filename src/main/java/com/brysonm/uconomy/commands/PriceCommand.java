@@ -1,5 +1,6 @@
 package com.brysonm.uconomy.commands;
 
+import com.brysonm.uconomy.ItemUtils;
 import com.brysonm.uconomy.Sale;
 import com.brysonm.uconomy.SaleUtils;
 import org.bukkit.ChatColor;
@@ -54,7 +55,7 @@ public class PriceCommand implements CommandExecutor {
 
                     if(sales.isEmpty()) {
 
-                        player.sendMessage(ChatColor.RED + "The uconomy has no " + material.name() + " left.");
+                        player.sendMessage(ChatColor.RED + "The economy has no " + ItemUtils.toFriendlyName(material) + " left.");
 
                         return true;
 
@@ -62,7 +63,7 @@ public class PriceCommand implements CommandExecutor {
 
                     if(sales.size() < amount) {
 
-                        player.sendMessage(ChatColor.RED + "Only " + sales.size() + " " + material.name() + " remains in the uconomy.");
+                        player.sendMessage(ChatColor.RED + "Only " + sales.size() + " " + ItemUtils.toFriendlyName(material) + " remains in the economy.");
 
                         return true;
 
@@ -76,7 +77,7 @@ public class PriceCommand implements CommandExecutor {
 
                     }
 
-                    player.sendMessage(ChatColor.GRAY + "" + amount + " " + material.name() + " costs " + price + " gold.");
+                    player.sendMessage(ChatColor.GRAY + "" + amount + " " + ItemUtils.toFriendlyName(material) + " costs " + price + " gold.");
 
                     return true;
 
