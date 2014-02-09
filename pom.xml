@@ -4,7 +4,7 @@
   <groupId>com.brysonm.uconomy</groupId>
   <artifactId>uConomy</artifactId>
   <packaging>jar</packaging>
-  <version>1.0-SNAPSHOT</version>
+  <version>1.0</version>
   <name>uConomy</name>
   <url>http://maven.apache.org</url>
   <repositories>
