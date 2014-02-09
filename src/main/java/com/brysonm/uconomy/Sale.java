@@ -23,13 +23,9 @@ public class Sale {
 
         this.price = price;
 
-        if(!uConomy.getInstance().mysql) {
+        this.uuid = UUID.randomUUID();
 
-            this.uuid = UUID.randomUUID();
-
-            this.save();
-
-        }
+        this.save();
 
     }
 

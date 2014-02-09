@@ -13,10 +13,6 @@
           <url>http://repo.bukkit.org/content/groups/public/</url>
       </repository>
       <repository>
-          <id>mysql-repo</id>
-          <url>http://central.maven.org/maven2/</url>
-      </repository>
-      <repository>
           <id>Plugin Metrics</id>
           <url>http://repo.mcstats.org/content/repositories/public</url>
       </repository>
@@ -32,11 +28,6 @@
           <groupId>org.bukkit</groupId>
           <artifactId>bukkit</artifactId>
           <version>LATEST</version>
-      </dependency>
-      <dependency>
-          <groupId>mysql</groupId>
-          <artifactId>mysql-connector-java</artifactId>
-          <version>5.1.29</version>
       </dependency>
       <dependency>
           <groupId>org.mcstats.bukkit</groupId>

@@ -1,7 +1,0 @@
-mysql-enabled: false
-mysql:
-    host: test
-    database: test
-    user: test
-    password: test
-    table: test

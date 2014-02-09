@@ -14,16 +14,10 @@ public class uConomy extends JavaPlugin {
 
     private static YMLFactory.YML salesYML;
 
-    public boolean mysql;
-
-    public Database database;
-
     public void onEnable() {
         instance = this;
         balancesYML = YMLFactory.buildYML("balances", this);
         salesYML = YMLFactory.buildYML("sales", this);
-        saveDefaultConfig();
-        mysql = getConfig().getBoolean("mysql-enabled");
         getCommand("balance").setExecutor(new BalanceCommand());
         getCommand("deposit").setExecutor(new DepositCommand());
         getCommand("withdraw").setExecutor(new WithdrawCommand());
