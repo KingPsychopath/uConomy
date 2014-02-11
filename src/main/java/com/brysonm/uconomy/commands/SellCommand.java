@@ -31,7 +31,7 @@ public class SellCommand implements CommandExecutor {
 
                     }
 
-                    Material material = Material.getMaterial(args[1].toUpperCase());
+                    Material material = Material.matchMaterial(args[1].toUpperCase());
 
                     if(material == null) {
 

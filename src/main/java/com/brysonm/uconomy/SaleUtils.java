@@ -136,7 +136,7 @@ public class SaleUtils {
 
             if(Bukkit.getPlayer(sale.getPlayer().getName()) != null) {
 
-                Bukkit.getPlayer(sale.getPlayer().getName()).sendMessage(ChatColor.GOLD + "A player has bought 1 " + sale.getMaterial().name() + " from you for " + sale.getPrice() + " gold. Your new balance is " + BalanceUtils.getBalance(Bukkit.getPlayer(sale.getPlayer().getName())) + ".");
+                Bukkit.getPlayer(sale.getPlayer().getName()).sendMessage(ChatColor.GOLD + "A player has bought 1 " + ItemUtils.toFriendlyName(sale.getMaterial()) + " from you for " + sale.getPrice() + " gold. Your new balance is " + BalanceUtils.getBalance(Bukkit.getPlayer(sale.getPlayer().getName())) + ".");
 
             }
 
