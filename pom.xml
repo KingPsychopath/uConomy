@@ -4,7 +4,7 @@
   <groupId>com.brysonm.uconomy</groupId>
   <artifactId>uConomy</artifactId>
   <packaging>jar</packaging>
-  <version>1.0</version>
+  <version>1.0.1</version>
   <name>uConomy</name>
   <url>http://maven.apache.org</url>
   <build>
@@ -24,10 +24,6 @@
           <id>bukkit-repo</id>
           <url>http://repo.bukkit.org/content/groups/public/</url>
       </repository>
-      <repository>
-          <id>Plugin Metrics</id>
-          <url>http://repo.mcstats.org/content/repositories/public</url>
-      </repository>
   </repositories>
   <dependencies>
       <dependency>
@@ -40,12 +36,6 @@
           <groupId>org.bukkit</groupId>
           <artifactId>bukkit</artifactId>
           <version>LATEST</version>
-      </dependency>
-      <dependency>
-          <groupId>org.mcstats.bukkit</groupId>
-          <artifactId>metrics</artifactId>
-          <version>LATEST</version>
-          <scope>compile</scope>
       </dependency>
   </dependencies>
 </project>
