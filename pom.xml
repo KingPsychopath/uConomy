@@ -10,7 +10,7 @@
   <distributionManagement>
     <repository>
       <id>brysonm-deployment</id>
-      <url>brysonm.com:8081/nexus/content/repositories</url>
+      <url>http://brysonm.com:8088/archiva/repository/releases/</url>
     </repository>
   </distributionManagement>
   <build>
