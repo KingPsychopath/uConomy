@@ -1,48 +1,96 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>com.brysonm.uconomy</groupId>
-  <artifactId>uConomy</artifactId>
-  <packaging>jar</packaging>
-  <version>1.1-SNAPSHOT</version>
-  <name>uConomy</name>
-  <url>http://maven.apache.org</url>
-  <distributionManagement>
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  
+<modelVersion>4.0.0</modelVersion>
+<groupId>com.brysonm.uconomy</groupId>
+<artifactId>uConomy</artifactId>
+<packaging>jar</packaging>
+<version>1.1-SNAPSHOT</version>
+<name>uConomy</name>
+<url>http://maven.apache.org</url>
+  
+<distributionManagement>
     <repository>
-      <id>archiva.builds</id>
-      <name>Builds Repository</name>
-      <url>http://brysonm.com:8088/archiva/repository/builds/</url>
+        <id>archiva.builds</id>
+      	<name>Builds Repository</name>
+      	<url>http://brysonm.com:8088/archiva/repository/builds/</url>
+	</repository>
+</distributionManagement>
+  
+<repositories>
+	<repository>
+    	<id>bukkit-repo</id>
+        <url>http://repo.bukkit.org/content/groups/public/</url>
     </repository>
-  </distributionManagement>
-  <build>
+    <repository>
+        <id>gravity-repo</id>
+        <url>http://repo.gravitydevelopment.net</url>
+    </repository>
+    <repository>
+        <id>mcstats-repo</id>
+        <url>http://repo.mcstats.org/content/repositories/releases/</url>
+    </repository>
+</repositories>
+  
+<dependencies>
+	<dependency>
+    	<groupId>junit</groupId>
+        <artifactId>junit</artifactId>
+        <version>3.8.1</version>
+        <scope>test</scope>
+    </dependency>
+    <dependency>
+        <groupId>org.bukkit</groupId>
+        <artifactId>bukkit</artifactId>
+        <version>LATEST</version>
+    </dependency>
+    <dependency>
+    	<groupId>net.gravitydevelopment.updater</groupId>
+        <artifactId>updater</artifactId>
+        <version>LATEST</version>
+    </dependency>
+    <dependency>
+        <groupId>org.mcstats.bukkit</groupId>
+        <artifactId>metrics</artifactId>
+        <version>LATEST</version>
+    </dependency>
+</dependencies>
+  
+<build>
     <finalName>${project.artifactId}</finalName>
+    <sourceDirectory>src/main/java</sourceDirectory>
     <resources>
-      <resource>
-        <directory>src/main/resources</directory>
+        <resource>
         <filtering>true</filtering>
+        <directory>src/main/resources/</directory>
         <includes>
-          <include>*.yml</include>
+            <include>*.yml</include>
         </includes>
-      </resource>
+        </resource>
     </resources>
-  </build>
-  <repositories>
-      <repository>
-          <id>bukkit-repo</id>
-          <url>http://repo.bukkit.org/content/groups/public/</url>
-      </repository>
-  </repositories>
-  <dependencies>
-      <dependency>
-          <groupId>junit</groupId>
-          <artifactId>junit</artifactId>
-          <version>3.8.1</version>
-          <scope>test</scope>
-      </dependency>
-      <dependency>
-          <groupId>org.bukkit</groupId>
-          <artifactId>bukkit</artifactId>
-          <version>LATEST</version>
-      </dependency>
-  </dependencies>
+
+    <plugins>
+        <plugin>
+	        <groupId>org.apache.maven.plugins</groupId>
+	        <artifactId>maven-shade-plugin</artifactId>
+	        <version>2.2</version>
+	        <executions>
+	        	<execution>
+		            <phase>package</phase>
+		            <goals>
+		                <goal>shade</goal>
+		            </goals>
+		            <configuration>
+			            <artifactSet>
+			                <excludes>
+				                <exclude>org.bukkit</exclude>
+				                <exclude>net.milkbowl.vault</exclude>
+			            	</excludes>
+		            	</artifactSet>
+		        	</configuration>
+	        	</execution>
+	    	</executions>
+    	</plugin>
+	</plugins>
+</build>
 </project>

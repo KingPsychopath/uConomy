@@ -1,11 +1,17 @@
 name: Economy
 main: com.brysonm.uconomy.uConomy
 version: 1.0
-
+authors: [Compressions, stuntguy3000]
 commands:
-  sell:
-  balance:
-  deposit:
-  withdraw:
-  buy:
-  price:
+    sell:
+        description: ""
+    balance:
+        description: "See how much money you have.""
+    deposit:
+        description: ""
+    withdraw:
+        description: ""
+    buy:
+        description: ""
+    price:
+        description: ""
