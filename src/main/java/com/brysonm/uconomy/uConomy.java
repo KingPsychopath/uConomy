@@ -30,19 +30,6 @@ public class uConomy extends JavaPlugin {
         getCommand("buy").setExecutor(new BuyCommand());
         getCommand("price").setExecutor(new PriceCommand());
         SaleUtils.loadSales();
-
-        // Load Metrics
-        try {
-            Metrics metrics = new Metrics(this);
-            metrics.start();
-        } catch(IOException ex) {
-            ex.printStackTrace();
-        }
-
-        // Load Auto Updater
-        if (getConfig().getBoolean("updater", true)) {
-            Updater updater = new Updater(this, 73898, this.getFile(), Updater.UpdateType.DEFAULT, false);
-        }
     }
 
     public void onDisable() {
