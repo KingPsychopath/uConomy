@@ -1,17 +1,11 @@
 name: Economy
 main: com.brysonm.uconomy.uConomy
-version: 1.0
+version: 1.1-SNAPSHOT
 authors: Compressions
 commands:
     sell:
-        description: ""
     balance:
-        description: "See how much money you have.""
     deposit:
-        description: ""
     withdraw:
-        description: ""
     buy:
-        description: ""
     price:
-        description: ""
