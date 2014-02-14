@@ -1,7 +1,7 @@
 name: Economy
 main: com.brysonm.uconomy.uConomy
 version: 1.0
-authors: [brysonm, stuntguy3000]
+authors: [Compressions, stuntguy3000]
 commands:
     sell:
         description: ""
