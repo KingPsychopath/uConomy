@@ -7,6 +7,12 @@
   <version>1.0.1</version>
   <name>uConomy</name>
   <url>http://maven.apache.org</url>
+  <distributionManagement>
+    <repository>
+      <id>brysonm-deployment</id>
+      <url>brysonm.com:8081/nexus/content/repositories</url>
+    </repository>
+  </distributionManagement>
   <build>
     <finalName>${project.artifactId}</finalName>
     <resources>
