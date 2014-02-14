@@ -1,6 +1,9 @@
 package com.brysonm.uconomy;
 
 import com.brysonm.uconomy.commands.*;
+
+import net.gravitydevelopment.updater.Updater;
+
 import org.bukkit.plugin.java.JavaPlugin;
 import org.mcstats.Metrics;
 
@@ -15,6 +18,8 @@ public class uConomy extends JavaPlugin {
     private static YMLFactory.YML salesYML;
 
     public void onEnable() {
+        saveDefaultConfig();
+
         instance = this;
         balancesYML = YMLFactory.buildYML("balances", this);
         salesYML = YMLFactory.buildYML("sales", this);
@@ -26,18 +31,18 @@ public class uConomy extends JavaPlugin {
         getCommand("price").setExecutor(new PriceCommand());
         SaleUtils.loadSales();
 
+        // Load Metrics
         try {
-
             Metrics metrics = new Metrics(this);
-
             metrics.start();
-
         } catch(IOException ex) {
-
             ex.printStackTrace();
-
         }
 
+        // Load Auto Updater
+        if (getConfig().getBoolean("updater", true)) {
+            Updater updater = new Updater(this, 73898, this.getFile(), Updater.UpdateType.DEFAULT, false);
+        }
     }
 
     public void onDisable() {
@@ -56,5 +61,4 @@ public class uConomy extends JavaPlugin {
     public static YMLFactory.YML getSalesYML() {
         return salesYML;
     }
-
 }
