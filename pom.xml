@@ -13,6 +13,11 @@
       <name>Releases Repository</name>
       <url>http://brysonm.com:8088/archiva/repository/releases/</url>
     </repository>
+    <snapshotRepository>
+      <id>archiva.snapshots</id>
+      <name>Snapshots Repository</name>
+      <url>http://brysonm.com:8088/archiva/repository/snapshots/</url>
+    </snapshotRepository>
   </distributionManagement>
   <build>
     <finalName>${project.artifactId}</finalName>
