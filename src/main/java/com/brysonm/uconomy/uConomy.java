@@ -2,12 +2,8 @@ package com.brysonm.uconomy;
 
 import com.brysonm.uconomy.commands.*;
 
-import net.gravitydevelopment.updater.Updater;
-
 import org.bukkit.plugin.java.JavaPlugin;
-import org.mcstats.Metrics;
 
-import java.io.IOException;
 
 public class uConomy extends JavaPlugin {
 
