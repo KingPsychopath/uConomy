@@ -9,15 +9,10 @@
   <url>http://maven.apache.org</url>
   <distributionManagement>
     <repository>
-      <id>archiva.releases</id>
-      <name>Releases Repository</name>
-      <url>http://brysonm.com:8088/archiva/repository/releases/</url>
+      <id>archiva.builds</id>
+      <name>Builds Repository</name>
+      <url>http://brysonm.com:8088/archiva/repository/builds/</url>
     </repository>
-    <snapshotRepository>
-      <id>archiva.snapshots</id>
-      <name>Snapshots Repository</name>
-      <url>http://brysonm.com:8088/archiva/repository/snapshots/</url>
-    </snapshotRepository>
   </distributionManagement>
   <build>
     <finalName>${project.artifactId}</finalName>
