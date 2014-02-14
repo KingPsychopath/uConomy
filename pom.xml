@@ -11,10 +11,13 @@
   
 <distributionManagement>
     <repository>
-        <id>archiva.builds</id>
-      	<name>Builds Repository</name>
-      	<url>http://brysonm.com:8088/archiva/repository/builds/</url>
+        <id>nexus.releases</id>
+      	<url>http://brysonm.com:8081/nexus/content/repositories/releases/</url>
 	</repository>
+    <repository>
+        <id>nexus.snapshots</id>
+        <url>http://brysonm.com:8081/nexus/content/repositories/snapshots/</url>
+    </repository>
 </distributionManagement>
   
 <repositories>
