@@ -14,10 +14,10 @@
         <id>nexus.releases</id>
       	<url>http://brysonm.com:8081/nexus/content/repositories/releases/</url>
 	</repository>
-    <repository>
+    <snapshotRepository>
         <id>nexus.snapshots</id>
         <url>http://brysonm.com:8081/nexus/content/repositories/snapshots/</url>
-    </repository>
+    </snapshotRepository>
 </distributionManagement>
   
 <repositories>
