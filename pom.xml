@@ -9,7 +9,6 @@
 <name>uConomy</name>
 <url>http://maven.apache.org</url>
   
-<!--
 <distributionManagement>
     <repository>
         <id>nexus-releases</id>
@@ -20,7 +19,6 @@
         <url>http://brysonm.com:8088/nexus/content/repositories/snapshots/</url>
     </snapshotRepository>
 </distributionManagement>
--->
   
 <repositories>
 	<repository>
