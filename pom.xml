@@ -9,7 +9,8 @@
   <url>http://maven.apache.org</url>
   <distributionManagement>
     <repository>
-      <id>brysonm-deployment</id>
+      <id>archiva.releases</id>
+      <name>Releases Repository</name>
       <url>http://brysonm.com:8088/archiva/repository/releases/</url>
     </repository>
   </distributionManagement>
