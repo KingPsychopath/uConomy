@@ -2,21 +2,18 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   
 <modelVersion>4.0.0</modelVersion>
-<groupId>com.brysonm.uconomy</groupId>
+<groupId>com.brysonm</groupId>
 <artifactId>uConomy</artifactId>
-<packaging>jar</packaging>
 <version>1.1-SNAPSHOT</version>
-<name>uConomy</name>
-<url>http://maven.apache.org</url>
   
 <distributionManagement>
     <repository>
         <id>nexus-releases</id>
-      	<url>http://brysonm.com:8088/nexus/content/repositories/releases/</url>
+      	<url>http://brysonm.com:8081/nexus/content/repositories/releases/</url>
 	</repository>
     <snapshotRepository>
         <id>nexus-snapshots</id>
-        <url>http://brysonm.com:8088/nexus/content/repositories/snapshots/</url>
+        <url>http://brysonm.com:8081/nexus/content/repositories/snapshots/</url>
     </snapshotRepository>
 </distributionManagement>
   
@@ -25,23 +22,9 @@
     	<id>bukkit-repo</id>
         <url>http://repo.bukkit.org/content/groups/public/</url>
     </repository>
-    <repository>
-        <id>gravity-repo</id>
-        <url>http://repo.gravitydevelopment.net</url>
-    </repository>
-    <repository>
-        <id>mcstats-repo</id>
-        <url>http://repo.mcstats.org/content/repositories/releases/</url>
-    </repository>
 </repositories>
   
 <dependencies>
-	<dependency>
-    	<groupId>junit</groupId>
-        <artifactId>junit</artifactId>
-        <version>3.8.1</version>
-        <scope>test</scope>
-    </dependency>
     <dependency>
         <groupId>org.bukkit</groupId>
         <artifactId>bukkit</artifactId>
