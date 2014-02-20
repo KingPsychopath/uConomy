@@ -5,6 +5,7 @@ authors: Compressions
 commands:
     sell:
     balance:
+      aliases: [bal]
     deposit:
     withdraw:
     buy:

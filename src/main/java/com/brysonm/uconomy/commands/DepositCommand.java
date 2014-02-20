@@ -17,6 +17,14 @@ public class DepositCommand implements CommandExecutor {
 
             Player player = (Player) sender;
 
+            if(!player.hasPermission("uconomy." + cmd.getName().toLowerCase())) {
+
+                player.sendMessage(ChatColor.RED + "You do not have permission to execute this command!");
+
+                return true;
+
+            }
+
             if(args.length == 1) {
 
                 try {

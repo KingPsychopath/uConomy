@@ -18,6 +18,14 @@ public class WithdrawCommand implements CommandExecutor {
 
             if(args.length == 1) {
 
+                if(!player.hasPermission("uconomy." + cmd.getName().toLowerCase())) {
+
+                    player.sendMessage(ChatColor.RED + "You do not have permission to execute this command!");
+
+                    return true;
+
+                }
+
                 try {
 
                     int amount = Integer.parseInt(args[0]);

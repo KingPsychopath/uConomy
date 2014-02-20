@@ -14,6 +14,14 @@ public class BalanceCommand implements CommandExecutor {
 
             Player player = (Player) sender;
 
+            if(!player.hasPermission("uconomy." + cmd.getName().toLowerCase())) {
+
+                player.sendMessage(ChatColor.RED + "You do not have permission to execute this command!");
+
+                return true;
+
+            }
+
             if(args.length == 0) {
 
                 double balance = BalanceUtils.getBalance(player);
